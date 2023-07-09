@@ -1,1 +1,8 @@
-console.log("Welcome to Node!!!");
+const {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+} = require("./contacts");
+
+const list = listContacts();
