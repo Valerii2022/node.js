@@ -1,6 +1,6 @@
 const { readFile, writeFile } = require("fs/promises");
 const path = require("path");
-// const nanoid = require("nanoid");
+const { v4: uuidv4 } = require("uuid");
 
 const contactsPath = path.resolve("db", "contacts.json");
 
@@ -32,7 +32,7 @@ const removeContact = async (contactId) => {
 const addContact = async ({ name, email, phone }) => {
   const contacts = await listContacts();
   const newContact = {
-    id: 1,
+    id: uuidv4(),
     name,
     email,
     phone,
