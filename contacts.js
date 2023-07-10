@@ -29,11 +29,13 @@ const removeContact = async (contactId) => {
   return result;
 };
 
-const addContact = async (name, email, phone) => {
+const addContact = async ({ name, email, phone }) => {
   const contacts = await listContacts();
   const newContact = {
     id: 1,
     name,
+    email,
+    phone,
   };
   contacts.push(newContact);
   await updateContacts(contacts);
